@@ -33,6 +33,7 @@ function playButtonAnimation(letter){
 }
 
 function drumButtonCallback(letter){
+    letter = letter.toLowerCase();
     playInstrumentSound(letter);
     playButtonAnimation(letter);
 }
@@ -42,7 +43,7 @@ function drumButtonCallback(letter){
 var btnList = document.querySelectorAll(".drum");
 for (var i = 0; i < btnList.length; i++){
     btnList[i].addEventListener("click", function (){
-            drumButtonCallback(this.textContent.toLowerCase());
+            drumButtonCallback(this.textContent);
         });
 }
 
